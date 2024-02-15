@@ -14,12 +14,12 @@ st.title("Trabalho de instrumentação eletrônica - Equipe 3")
 if st.button("Atualizar valores"):
     st.rerun()
 # Função para atualizar automaticamente após um intervalo de tempo
-#def atualizar_pagina():
-    #st.rerun()
+def atualizar_pagina():
+    st.rerun()
 
 
 # Mostrar os dados
-#st.dataframe(data)
+st.dataframe(data)
 
 # Função para atualizar a página após um intervalo de tempo
 def atualizar_pagina():
@@ -27,6 +27,6 @@ def atualizar_pagina():
     st.rerun()  # Atualiza a página
 
 # Atualizar automaticamente a página
-while True:
-    st.table(data)
-    atualizar_pagina()
+#while True:
+    #st.table(data)
+    #atualizar_pagina()
