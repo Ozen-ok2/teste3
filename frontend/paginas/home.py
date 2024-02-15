@@ -19,7 +19,7 @@ def atualizar_pagina():
 
 
 # Mostrar os dados
-st.dataframe(data)
+st.table(data)
 
 # Função para atualizar a página após um intervalo de tempo
 def atualizar_pagina():
