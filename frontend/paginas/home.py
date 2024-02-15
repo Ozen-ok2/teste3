@@ -14,8 +14,8 @@ st.title("Trabalho de instrumentação eletrônica - Equipe 3")
 if st.button("Atualizar valores"):
     st.rerun()
 # Função para atualizar automaticamente após um intervalo de tempo
-def atualizar_pagina():
-    st.rerun()
+#def atualizar_pagina():
+    #st.rerun()
 
 
 # Mostrar os dados
