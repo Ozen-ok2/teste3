@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 # DataFrame para armazenar os dados
-data = pd.DataFrame(columns=['Timestamp', 'Distância (cm)', 'Duração (ms)', 'Volume (ml)'])
+data = pd.DataFrame(columns=['Timestamp', 'Distância (cm)', 'Duração (ms)', 'Volume (ml)']).tail(10)
 
 # Variável global para controlar o status da conexão
 is_connected = False
