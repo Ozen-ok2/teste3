@@ -1,5 +1,6 @@
 import streamlit as st, time
 import pandas as pd
+import numpy as np
 from backend.codigo_dashboard import iniciar_mqtt, data
 
 # Iniciar MQTT em uma thread separada
