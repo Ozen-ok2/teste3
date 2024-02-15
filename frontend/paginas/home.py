@@ -31,12 +31,9 @@ def atualizar_pagina():
 #while True:
     #st.table(data)
     #atualizar_pagina()
-chart_data = pd.DataFrame(
-   {
-       "col1": np.random.randn(20),
-       "col2": np.random.randn(20),
-       "col3": np.random.choice(["A", "B", "C"], 20),
-   }
-)
 
-st.area_chart(chart_data, x="col1", y="col2", color="col3")
+# df_tempo = data[""] 
+
+print(data.columns)
+
+# st.area_chart(chart_data, x="col1", y="col2", color="col3")
