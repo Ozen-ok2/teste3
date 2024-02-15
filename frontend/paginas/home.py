@@ -19,8 +19,8 @@ def atualizar_pagina():
     st.rerun()
 
 
-# Mostrar os dados
-st.table(data.tail(20))
+# Mostrar os dados - 15 linhas
+st.table(data.tail(15))
 
 # Função para atualizar a página após um intervalo de tempo
 def atualizar_pagina():
@@ -32,8 +32,13 @@ def atualizar_pagina():
     #st.table(data)
     #atualizar_pagina()
 
-# df_tempo = data[""] 
+df_tempo = data["Duração (ms)"]
+df_distancia = data["Distância (cm)"]
+df_volume = data["Volume (ml)"]
 
-print(data.columns)
+chart_data = pd.DataFrame ({
+    "Distância" : df_distancia,
+    "Volume" : df_volume    
+})
 
-# st.area_chart(chart_data, x="col1", y="col2", color="col3")
+st.line_chart(chart_data, x="col1", y="col2", color="col3")
