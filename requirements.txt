@@ -2,3 +2,5 @@ pandas
 numpy
 paho-mqtt==1.5.0
 st-pages
+matplotlib
+seaborn

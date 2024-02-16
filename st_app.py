@@ -5,8 +5,9 @@ import streamlit as st
 # should be
 show_pages(
     [
-        Page("frontend/paginas/home.py", "Home", "🏫")
+        Page("home.py", "Home", "🏫"),
+        Page("teste_pag.py", "teste", "🏫")
     ]
 )
 
-st.switch_page("frontend/paginas/home.py")
+st.switch_page("home.py")
