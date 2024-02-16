@@ -9,5 +9,5 @@ data = pd.read_csv('data.csv').rename(columns={'Timestamp': 'timestamp', 'Distan
 
 st.text(data.columns)
 
-# st.subheader("Variação ao Longo do Tempo")
-# st.line_chart(data.set_index('duracao'))  # Linha para cada coluna, indexado pelo timestamp
+st.subheader("Variação ao Longo do Tempo")
+st.line_chart(data.set_index('duracao'))  # Linha para cada coluna, indexado pelo timestamp
