@@ -2,33 +2,32 @@ import streamlit as st
 import pandas as pd
 import time
 
-# Função para ler os dados do CSV
-def load_csv_data():
-    # Ler o arquivo CSV
-    df = pd.read_csv("data.csv")
+# Função para ler os dados do CSV e retornar apenas a última linha
+def load_latest_csv_row():
+    df = pd.read_csv("data.csv").tail(1)
     return df
 
-# Configurar o Streamlit
+# Configuração inicial do Streamlit
 st.title("Medição de Volume")
 col1, col2, col3 = st.columns(3)
 
-# Inicializar placeholders com valores iniciais
+# Inicialização dos placeholders com valores iniciais
 placeholder_hora = col1.metric("Hora", "...")
 placeholder_volume_percent = col2.metric("Volume (%)", "...")
 placeholder_volume_ml = col3.metric("Volume (ml)", "...")
 
-# Loop principal para atualizar os dados
+# Loop principal para atualizar os dados em tempo real
 while True:
-    # Carregar os dados do CSV
-    df = load_csv_data()
+    # Carregar a última linha do CSV
+    latest_row = load_latest_csv_row()
     
-    for index, row in df.iterrows():
-        # Extrair apenas a parte da hora do timestamp
-        hora = pd.to_datetime(row['Timestamp']).strftime('%H:%M:%S')  # Formato de hora: HH:MM:SS
+    for index, row in latest_row.iterrows():
+        # Extrair a parte da hora do timestamp
+        hora = pd.to_datetime(row['Timestamp']).strftime('%H:%M:%S')
 
-        # Calcular o volume em porcentagem em relação aos 2 litros
+        # Calcular o volume em porcentagem em relação ao máximo de litros
         volume_ml = row['Volume (ml)']
-        volume_percent = (volume_ml / 2000) * 100  # 2 litros = 2000 ml
+        volume_percent = (volume_ml / 2000) * 100  # 1924.42184986 ml ou 2000 ml
 
         # Atualizar os valores na mesma linha
         placeholder_hora.metric("Hora", hora)
