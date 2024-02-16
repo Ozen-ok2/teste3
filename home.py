@@ -21,7 +21,8 @@ if not data.empty:
     # Histograma para visualizar a distribuição de distâncias
     st.subheader("Distribuição de Distâncias")
     fig, ax = plt.subplots(figsize=(10, 6))
-    sns.histplot(data['Distancia (cm)'], bins=20, kde=True, ax=ax)
+    fig, ay = plt.subplots(figsize=(10, 6))
+    sns.histplot(x = data['Distancia (cm)'], y = data=['Volume (ml)'] , bins=20, kde=True, ax=ax)
     st.pyplot(fig)  # Exibir o histograma
     
     # Gráfico de dispersão para comparar distância e duração
