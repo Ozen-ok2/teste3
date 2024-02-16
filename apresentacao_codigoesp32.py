@@ -134,7 +134,7 @@ void loop() {
   client.publish("sensor_HC-SR04/duracao", String(duracao/1000).c_str());
   client.publish("sensor_HC-SR04/volume_ml", String(volumeMililitros).c_str());
 
-  // // Imprimir no Serial Monitor hora atual, distancia, duracao e volume 
+  // Imprimir no Serial Monitor hora atual, distancia, duracao e volume 
   printLocalTime();
   Serial.print("Distância: ");
   Serial.print(distancia);
