@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 st.set_page_config(page_title="Home", page_icon="frontend/imagens/gen.ico")
 
 # Dados
-data = pd.read_csv('data.csv').rename({'Timestamp': 'timestamp', 'Distancia (cm)' : 'distancia', 'Duracao (ms)': 'duracao', 'Volume (ml)' : 'volume'})
+data = pd.read_csv('data.csv').rename(columns={'Timestamp': 'timestamp', 'Distancia (cm)' : 'distancia', 'Duracao (ms)': 'duracao', 'Volume (ml)' : 'volume'})
 
 st.text(data.columns)
 
