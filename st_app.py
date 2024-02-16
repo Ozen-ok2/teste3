@@ -6,7 +6,8 @@ import streamlit as st
 show_pages(
     [
         Page("home.py", "Home", "🏫"),
-        Page("teste_pag.py", "teste", "🏫")
+        Page("teste_pag.py", "teste", "🏫"),
+        Page("medicao_volume.py", "volume_teste", "💀")
     ]
 )
 
