@@ -21,9 +21,16 @@ if not data.empty:
     # Histograma para visualizar a distribuição de distâncias
     st.subheader("Distribuição de Distâncias")
     fig, ax = plt.subplots(figsize=(10, 6))
-    sns.histplot(data=data['Volume (ml)'], bins=20, kde=True, ax=ax)
+    sns.histplot(data['Distancia (cm)'], bins=25, kde=True, ax=ax)
     st.pyplot(fig)  # Exibir o histograma
     
+    # Kdeplot
+    st.subheader("Volume x Distância")
+    diamonds = sns.load_dataset('diamonds')
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.kdeplot(data=diamonds, x=data['Volume (ml)'])
+    st.pyplot(fig)
+
     # Gráfico de dispersão para comparar distância e duração
     st.subheader("Dispersão: Distância vs. Duração")
     st.scatter_chart(data[['Distancia (cm)', 'Duracao (ms)']])  # Gráfico de dispersão
