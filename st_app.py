@@ -7,7 +7,9 @@ show_pages(
     [
         Page("home.py", "Home", "🏫"),
         Page("teste_pag.py", "teste", "🏫"),
-        Page("medicao_volume.py", "volume_teste", "💀")
+        Page("medicao_volume.py", "volume_teste", "💀"),
+        Page("yago.py", "pagina do yago", "💀")
+        
     ]
 )
 
