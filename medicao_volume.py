@@ -17,22 +17,22 @@ placeholder_volume_percent = col2.metric("Volume (%)", "...")
 placeholder_volume_ml = col3.metric("Volume (ml)", "...")
 
 # Loop principal para atualizar os dados em tempo real
-while True:
-    # Carregar a última linha do CSV
-    latest_row = load_latest_csv_row()
-    
-    for index, row in latest_row.iterrows():
-        # Extrair a parte da hora do timestamp
-        hora = pd.to_datetime(row['Timestamp']).strftime('%H:%M:%S')
+# Carregar a última linha do CSV
+latest_row = load_latest_csv_row()
 
-        # Calcular o volume em porcentagem em relação ao máximo de litros
-        volume_ml = row['Volume (ml)']
-        volume_percent = (volume_ml / 2000) * 100  # 1924.42184986 ml ou 2000 ml
+for index, row in latest_row.iterrows():
+    # Extrair a parte da hora do timestamp
+    hora = pd.to_datetime(row['Timestamp']).strftime('%H:%M:%S')
 
-        # Atualizar os valores na mesma linha
-        placeholder_hora.metric("Hora", hora)
-        placeholder_volume_percent.metric("Volume (%)", f"{volume_percent:.1f}%")
-        placeholder_volume_ml.metric("Volume (ml)", volume_ml)
+    # Calcular o volume em porcentagem em relação ao máximo de litros
+    volume_ml = row['Volume (ml)']
+    volume_percent = (volume_ml / 2000) * 100  # 1924.42184986 ml ou 2000 ml
 
-        # Aguardar 1 segundo antes de atualizar novamente
-        time.sleep(1)
+    # Atualizar os valores na mesma linha
+    placeholder_hora.metric("Hora", hora)
+    placeholder_volume_percent.metric("Volume (%)", f"{volume_percent:.1f}%")
+    placeholder_volume_ml.metric("Volume (ml)", volume_ml)
+
+    # Aguardar 1 segundo antes de atualizar novamente
+    st.rerun()
+    time.sleep(1)

@@ -12,8 +12,8 @@ float alturaSensor = 13.0; // em centímetros
 float m = 33.4;  // Coeficiente angular obtido pela calibração
 float b = 0.11;  // Termo independente obtido pela calibração
 
-const char* ssid = "***"; 
-const char* password = "***";  
+const char* ssid = "samsung"; 
+const char* password = "12345678";  
 
 const char* mqtt_server = "mqtt.eclipseprojects.io"; 
 
