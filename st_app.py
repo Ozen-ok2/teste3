@@ -5,8 +5,8 @@ import streamlit as st
 # should be
 show_pages(
     [
-        Page("home.py", "Home", "🏫"),
-        Page("teste_pag.py", "teste", "🏫"),
+        # Page("home.py", "Home", "🏫"),
+        # Page("teste_pag.py", "teste", "🏫"),
         Page("medicao_volume.py", "volume_teste", "💀"),
         Page("estado_da_arte.py", "Estado da Arte", "🏫"),
         Page("apresentacao_codigoesp32.py", "Algoritmo do ESP32", "💀"),
@@ -17,4 +17,4 @@ show_pages(
     ]
 )
 
-st.switch_page("home.py")
+st.switch_page("estado_da_arte.py")
