@@ -12,7 +12,7 @@ show_pages(
         Page("apresentacao_codigoesp32.py", "Algoritmo do ESP32", "💀"),
         Page("apresentacao_codigomqtt.py", "Algoritmo do MQTT", "💀"),
         Page("apresentacao_volume.py", "Algoritmo de medição do volume", "💀"),
-        Page("apresentacao_incertezas.py", "Algoritmo da medição de incertezas", "💀")
+        # Page("apresentac?ao_incertezas.py", "Algoritmo da medição de incertezas", "💀")
         
     ]
 )
