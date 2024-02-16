@@ -2,22 +2,11 @@ import streamlit as st
 import pandas as pd
 import time
 
-# Função para ler os dados em tempo real
-def load_realtime_data():
-    # Aqui você implementa a lógica para carregar os dados em tempo real
-    # Por exemplo, pode ser a leitura de dados de um sensor, uma API, ou de outro lugar
-    # Neste exemplo, vamos apenas retornar valores fictícios
-    return [
-        {"Timestamp": "2024-02-16 06:16:12", "Volume (ml)": 350.0},
-        {"Timestamp": "2024-02-16 06:16:13", "Volume (ml)": 450.0},
-        {"Timestamp": "2024-02-16 06:16:15", "Volume (ml)": 1050.0},
-        {"Timestamp": "2024-02-16 06:16:15", "Volume (ml)": 350.0},
-        {"Timestamp": "2024-02-16 06:16:16", "Volume (ml)": 0.0},  # Exemplo de leitura em 0
-        {"Timestamp": "2024-02-16 06:16:17", "Volume (ml)": 0.0},  # Exemplo de leitura em 0
-        {"Timestamp": "2024-02-16 06:16:18", "Volume (ml)": 0.0},  # Exemplo de leitura em 0
-        {"Timestamp": "2024-02-16 06:16:19", "Volume (ml)": 0.0},  # Exemplo de leitura em 0
-        {"Timestamp": "2024-02-16 06:16:20", "Volume (ml)": 0.0}   # Exemplo de leitura em 0
-    ]
+# Função para ler os dados do CSV
+def load_csv_data():
+    # Ler o arquivo CSV
+    df = pd.read_csv("data.csv")
+    return df
 
 # Configurar o Streamlit
 st.title("Medição de Volume")
@@ -30,10 +19,10 @@ placeholder_volume_ml = col3.metric("Volume (ml)", "...")
 
 # Loop principal para atualizar os dados
 while True:
-    # Carregar os dados em tempo real
-    data = load_realtime_data()
+    # Carregar os dados do CSV
+    df = load_csv_data()
     
-    for row in data:
+    for index, row in df.iterrows():
         # Extrair apenas a parte da hora do timestamp
         hora = pd.to_datetime(row['Timestamp']).strftime('%H:%M:%S')  # Formato de hora: HH:MM:SS
 
@@ -48,4 +37,3 @@ while True:
 
         # Aguardar 1 segundo antes de atualizar novamente
         time.sleep(1)
-
